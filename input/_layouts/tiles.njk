@@ -1,0 +1,52 @@
+{% extends "./base.njk" %}
+
+{% block main %}
+    <div class="tiles">
+        
+        {% block topLeft %}
+        <div class="tiles__text">
+            <h2 class="tiles__title">{{toptext}}</h2>
+
+            <div>
+                {% if addContact === true %}
+                    <p>{{ contact.email }}</p>
+                    <p> {{ contact.number }}</p>
+                    <p> {{ contact.address }}</p>                    
+            <ul class="socials">
+            {% for social in socials %}
+                <li class="socials__item socials__item--dark">
+                    <a target="_blank" class="socials__links" href="{{ social.url }}">
+                        <img src="{{social.iconDark}}" alt="{{ social.name }}">
+                    </a>
+                </li>
+            {% endfor %}
+            </ul>
+                {% endif %}
+            </div>
+
+    
+        </div>
+            
+            
+        {% endblock topLeft %}
+            
+        {% block topRight %}
+            <img class="tiles__image tiles__image--cover" src="/assets/img/{{ images[0] }}">
+        {% endblock topRight %}
+
+
+        {% block bottomLeft %}
+            <img class="tiles__image tiles__image--cover" src="/assets/img/{{ images[1] }}">
+        {% endblock bottomLeft %}
+
+        {% block bottomRight %}
+            <div class="tiles__text tiles__p">
+                <p>{{bottomtext}}</p>   
+            </div>
+        {% endblock bottomRight %}
+    </div>
+    {% block bottom %}
+    
+    {% endblock bottom %}
+
+{% endblock main %}

@@ -1,0 +1,15 @@
+{% macro card(link, title, img, description, description_p) %}
+    <a href="{{ link }}" class="card">
+        {% if title %}
+            <h3 class="card__title" >{{ title }}</h3>
+        {% endif %}
+
+        {% if img %}
+            <img src="/assets/img/{{ img }}" class="image image--cover"> 
+        {% endif %}
+
+        {% if description %}
+            <p class="card__description">{{ description}}</p>
+        {% endif %}
+    </a>
+{% endmacro %}

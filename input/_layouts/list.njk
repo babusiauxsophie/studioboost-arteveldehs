@@ -1,0 +1,48 @@
+{% extends "./base.njk" %}
+
+{% block main %}
+    
+    {% block top %}
+
+        <section class="home-nav"> 
+        
+        <img src="/assets/img/{{ headerImg }}" class="image image--cover image--dark">
+
+        <h2 class="header__sub">
+            {{  headerSubTitle }}
+        </h2>
+
+        <h1 class="home-nav__title header__title">
+            {{ title }}
+        </h1>
+
+        <p class="home-nav__paragraph header__paragraph">
+            {{ headerParagraph }}
+        </p>
+
+        <ul class="socials home-nav__socials">
+            {% for social in socials %}
+                <li class="socials__item">
+                    <a target="blank" class="socials_links" href="{{ social.url }}">
+                        <img src="{{social.icon}}" alt="{{ social.name }}">
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+</section>
+    
+    {% endblock top %}
+
+    {% block list %}
+
+        <div class="image__list">
+            {% for img in images %}
+
+            <img src="/assets/img/{{ img.img }}" class="image image--cover image--list">
+            
+            {% endfor %}
+        </div>
+
+    {% endblock list %}
+
+{% endblock main %}

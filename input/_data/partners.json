@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Adidas",
+        "link": "/assets/img/adidas.svg"
+    },
+    {
+        "name": "Amazon",
+        "link": "/assets/img/amazon.svg"
+    },
+    {
+        "name": "Audi",
+        "link": "/assets/img/audi.svg"
+    },
+    {
+        "name": "RedBull",
+        "link": "/assets/img/redbull.svg"
+    },
+    {
+        "name": "Apple Music",
+        "link": "/assets/img/apple.svg"
+    },
+    {
+        "name": "Yahoo",
+        "link": "/assets/img/yahoo.svg"
+    }
+]

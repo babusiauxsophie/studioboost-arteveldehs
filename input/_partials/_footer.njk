@@ -1,0 +1,43 @@
+<footer>
+    <div class="footer__top">
+        <div class='footer__left'>
+        <h2 class="footer__title">Studio Boost</h2>
+        <p>Studio Boost is een creatief bureau gespecialiseerd in het ontwerpen en ontwikkelen van websites, webshops en logo’s.</p>
+            <p>Heb je een idee of vraag? Aarzel niet om ons een mailtje te sturen via info@studioboost.be</p>
+
+        <ul class="socials">
+            {% for social in socials %}
+                <li class="socials__item">
+                    <a target="_blank" class="footer__links" href="{{ social.url }}">
+                        <img src="{{social.icon}}" alt="{{ social.name }}">
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        </div>
+        <div class='footer__right'>
+        <ul>
+            {% for nav_item in collections.nav %}
+                <li class="footer__nav">
+                    <a class="nav__item footer__links" href="{{ nav_item.page.url }}">{{ nav_item.data.nav }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+    </div>
+    
+    <hr>
+
+    <div class="footer__bottom">
+        <div>
+            <p>© Copyright 2023 - Studio Boost</p>
+        </div>
+        
+        <div class="footer__info">
+            <p>Cookies</p>
+            <p>Privacy</p>
+        </div>
+    </div>
+</footer>

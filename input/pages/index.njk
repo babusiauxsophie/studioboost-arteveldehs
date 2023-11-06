@@ -1,0 +1,145 @@
+---
+title: 'Home'
+nav: Home
+layout: base
+tags: nav
+navColor: light
+cards: 
+    - img: 'projecten (1).png'
+      title: 'HET MINISTERIE VOOR NATUUR - WEBSHOP'
+      link: "/projecten/ministerie-voor-natuur"
+    - img: 'projecten (2).png'
+      title: 'KINE CHARLIER - ONTWERP EN DEVELOPMENT'
+      link: "/projecten/kine-charlier"
+    - img: 'projecten (3).png'
+      title: 'ONDER VRIENDEN - DEVELOPMENT'
+      link: "/projecten/onder-vrienden"
+rowTitle: "Wie zijn wij?"
+rowParagraphs: 
+    - "Studio Boost is een creatief bureau dat gespecialiseerd is in het ontwerpen en ontwikkelen van websites, webshops en logo’s."
+    - "Het bureau heeft een passie voor het creëren van unieke en aantrekkelijke ontwerpen die passen bij de visie en missie van hun klanten. Ze werken nauw samen met hun klanten om ervoor te zorgen dat elk ontwerp volledig op maat gemaakt is en voldoet aan de behoeften van het bedrijf."
+    - "Het team van Studio Boost bestaat uit getalenteerde ontwerpers en ontwikkelaars die ervaring hebben met het werken met diverse industrieën."
+rowImage: 'decoration.svg'
+rowButton: 'over'
+cardBlog:
+    - img: 'blog (1).png'
+      title: 'E_COMMERCE'
+      description: 'Mobiel winkelen wordt de norm'
+      link: "mobiel-winkel-wordt-de-norm"
+cardBlogs:   
+    - img: 'blog (2).png'
+      title: 'E_COMMERCE'
+      description: 'De 8 belangrijkste e-commerce trends voor 2023'
+      link: "e-commerce-trends"   
+    - img: 'blog (3).png'
+      title: 'E_COMMERCE'
+      description: '8 e-commerce tips om meteen te implementeren'
+      link: "e-commerce-trends-1" 
+    - img: 'blog (4).png'
+      title: 'MARKETING'
+      description: 'Waarom je als bedrijf een podcast moet starten?'
+      link: "podcast"
+    - img: 'blog (5).png'
+      title: 'MARKETING'
+      description: 'Emoji’s in online marketing: do or don’t?'
+      link: "emoji"    
+---
+
+{% import "../_partials/_components.njk" as components %}
+
+<section class="home-nav"> 
+    <video class="home-nav__video" autoplay loop>
+        <source src="/assets/videos/home.mp4" type="video/mp4">
+    </video>
+    <h1 class="home-nav__title">Wij zijn Studio Boost</h1>
+
+    <p class="home-nav__paragraph">
+        We zijn een digitaal branding agency en kunnen jouw bedrijf promoten dankzij branding, website design, web development en digital marketing.
+    </p>
+
+    <ul class="socials home-nav__socials">
+        {% for social in socials %}
+            <li class="socials__item">
+                <a target="blank" class="socials_links" href="{{ social.url }}">
+                    <img src="{{social.icon}}" alt="{{ social.name }}">
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+
+<section class="home__projects">
+    <div class="projects__description">
+        <h2>
+            Ons meest recente werk
+        </h2>
+
+        <p>
+            Van webshop tot een interactieve applicatie. Bij Studio Boost is ‘the sky the limit’. Wij realiseren jullie droomproject en plaatsen je bedrijf in een nieuw jasje.
+        </p>
+    </div>
+    
+    <div class="grid grid--home">
+        {% for card in cards %}
+            <a href="{{ card.link}}" class="card"> 
+                <h3 class="card__title" >{{ card.title }}</h3>
+                <img src="/assets/img/{{ card.img }}" class="image image--cover">
+                {% if card.description %}
+                    <p class="card__description">{{ card.description}}</p>
+                {% endif %}
+            </a>
+        {% endfor %}
+    </div>
+    <a class="projects__link" href="projecten">
+        <h4>Bekijk alle projecten</h4>
+        <img class="arrow" src="assets/img/arrow.svg">
+    </a>
+    
+</section>
+
+{% include "_row.njk" %}
+
+<section >
+    <div class="home__blogs">
+        <h2>Nieuws</h2>
+        <p>
+            Blijf op de hoogte met de laatste nieuwtjes of leer bij met onze interessante blog-artikels.
+        </p>
+    </div>
+
+    <div class="home__blogs--grid">
+        {% for card in cardBlog%}
+            <a href="{{ card.link}}" class="card"> 
+                <h3 class="card__title" >{{ card.title }}</h3>
+                <img src="/assets/img/{{ card.img }}" class="image image--cover">
+                {% if card.description %}
+                    <p class="card__description">{{ card.description}}</p>
+                {% endif %}
+            </a>
+        {% endfor %}
+
+
+        <div class="home__blogs--4">
+            {% for card in cardBlogs%}
+                <a href="{{ card.link}}" class="card"> 
+                    <h3 class="card__title" >{{ card.title }}</h3>
+                    <img src="/assets/img/{{ card.img }}" class="image image--cover">
+                    <p class="card__description">{{ card.description}}</p>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="partners__wrapper">
+    <h2 class="partners__title">We werkten al eerder samen met</h2>
+    <ul class="partners">
+        {% for partner in partners %}
+         <li class="partners__item">
+            <img src="{{ partner.link }}" alt="{{ partner.name }}">
+         </li>
+        {% endfor %}
+
+    </ul>
+    
+</section>

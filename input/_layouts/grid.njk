@@ -1,0 +1,22 @@
+{% import "../_partials/_components.njk" as components %}
+{% extends "./base.njk" %}
+
+{% block main %}
+    
+    {% block hero %}
+    <div class="header header--black">
+        <h1 class="hero__title">{{title}}</h1>
+        <p class="hero__tekst">{{hero}}</p>
+    </div>
+        
+    {% endblock hero %}
+
+    {% block three %}
+        <div class="grid">
+            {% for card in cards %}
+                {{ components.card(title=card.title, link=card.link, img=card.img, description=card.description) }}
+            {% endfor %}
+        </div>
+    {% endblock three %}
+
+{% endblock main %}

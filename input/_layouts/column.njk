@@ -1,0 +1,34 @@
+{% extends "./base.njk" %}
+
+{% block main %}
+    
+    {% block top %}
+    <div class="blog__header">
+        <h1> {{ subtitle }}</h1>
+        <h3> {{ made }}</h3>
+    </div>
+        
+    {% endblock top %}
+
+    <section class="row">
+        <div>
+            <img src="../../assets/img/{{ rowImage }}">
+        </div>
+
+        <div class="row__text">
+       
+            {% for p in rowParagraphs %}
+                <p class="row__paragraph">
+                {{ p}}
+                </p>
+            {% endfor %}
+        
+        </div>
+    </section>
+
+    {% block center %}
+        
+    {% endblock center %}
+
+
+{% endblock main %}
